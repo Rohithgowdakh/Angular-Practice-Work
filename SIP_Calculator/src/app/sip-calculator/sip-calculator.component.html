@@ -1,0 +1,47 @@
+<div class="container mt-4">
+    <h1 class="d-flex justify-content-center">SIP Calculator</h1>
+    <div class="row">
+        
+        <div class="col-md-6">
+            <!-- SIP / Lumpsum Switch -->
+            <div class="mb-3 d-flex">
+                <button class="btn btn-success me-2 active">SIP</button>
+                <!-- <button class="btn btn-light">Lumpsum</button> -->
+            </div>
+
+            <!-- Monthly Investment -->
+            <label class="form-label">Monthly Investment</label>
+            <div class="d-flex align-items-center">
+                <input type="range" class="flex-grow-1" [(ngModel)]="monthlyInvestment" min="1000" max="100000" step="500">
+                <input type="text" class="form-control ms-2 text-success" [value]="'₹ ' + monthlyInvestment" readonly>
+            </div>
+
+            <!-- Expected Return Rate -->
+            <label class="form-label mt-3">Expected Return Rate (p.a)</label>
+            <div class="d-flex align-items-center">
+                <input type="range" class="flex-grow-1" [(ngModel)]="expectedRate" min="1" max="30" step="0.5">
+                <input type="text" class="form-control ms-2 text-success" [value]="expectedRate + '%'" readonly>
+            </div>
+
+            <!-- Time Period -->
+            <label class="form-label mt-3">Time Period</label>
+            <div class="d-flex align-items-center">
+                <input type="range" class="flex-grow-1" [(ngModel)]="timePeriod" min="1" max="30" step="1">
+                <input type="text" class="form-control ms-2 text-success" [value]="timePeriod + ' Yr'" readonly>
+            </div>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-center ">
+            <!-- Investment Summary -->
+            <div class="mt-4 ">
+                <h5><strong>Invested Amount</strong>: ₹{{ investedAmount | number }}</h5>
+                <h5><strong>Est. Returns</strong>: ₹{{ estimatedReturns | number }}</h5>
+                <h5><strong>Total Value</strong>: ₹{{ totalValue | number }}</h5>
+                 <!-- Invest Now Button -->
+            <button class="btn btn-success btn-lg mt-3">INVEST NOW</button>
+            </div>
+
+           
+        </div>
+    </div>
+</div>
