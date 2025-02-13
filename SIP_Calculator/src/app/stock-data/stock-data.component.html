@@ -1,0 +1,17 @@
+<div class="container-fluid mt-4">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card" *ngFor="let stock of companies">
+          <img [src]="stock.thumbnail" class="card-img-top" alt="{{ stock.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ stock.title }}</h5>
+            <p class="card-text">Symbol: {{ stock.symbol }}</p>
+            <p class="card-text">Price: ${{ stock.price }}</p>
+            <p class="card-text">Change: {{ stock.change }}</p>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

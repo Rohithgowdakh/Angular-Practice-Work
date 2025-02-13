@@ -1,21 +1,21 @@
 <div class="container">
     <h2 class="text-center mb-4">FD Calculator</h2>
   
-    <!-- Total Investment -->
-    <label for="investment">Total Investment</label>
-    <input type="range" id="investment" min="1000" max="10000000" step="1000" [(ngModel)]="investment" (input)="calculateFD()">
-    <input type="text" class="form-control text-success" [value]="'₹ ' + investment" readonly>
-  
-    <!-- Rate of Interest -->
-    <label for="interestRate">Rate of Interest (p.a)</label>
-    <input type="range" id="interestRate" min="1" max="15" step="0.1" [(ngModel)]="interestRate" (input)="calculateFD()">
-    <input type="text" class="form-control text-success" [value]="interestRate + '%'" readonly>
-  
-    <!-- Time Period -->
-    <label for="timePeriod">Time Period (Years)</label>
-    <input type="range" id="timePeriod" min="1" max="20" step="1" [(ngModel)]="timePeriod" (input)="calculateFD()">
-    <input type="text" class="form-control text-success" [value]="timePeriod" readonly>
-  
+<!-- Total Investment -->
+<label for="investment">Total Investment</label>
+<input type="range" id="investment" min="1000" max="10000000" step="1000" [(ngModel)]="investment" (input)="calculateFD()">
+<input type="number" class="form-control text-success" min="1000" max="10000000" step="1000" [(ngModel)]="investment" (input)="calculateFD()">
+
+<!-- Rate of Interest -->
+<label for="interestRate">Rate of Interest (p.a)</label>
+<input type="range" id="interestRate" min="1" max="15" step="0.1" [(ngModel)]="interestRate" (input)="calculateFD()">
+<input type="number" class="form-control text-success"  min="1" max="15" step="0.1" [(ngModel)]="interestRate" (input)="calculateFD()">
+
+<!-- Time Period -->
+<label for="timePeriod">Time Period (Years)</label>
+<input type="range" id="timePeriod" min="1" max="20" step="1" [(ngModel)]="timePeriod" (input)="calculateFD()">
+<input type="number" class="form-control text-success" min="1" max="20" step="1" [(ngModel)]="timePeriod" (input)="calculateFD()">
+
     <!-- Results -->
     <div class="mt-4">
       <h5>Invested Amount: <span class="text-primary">₹ {{ investment | number }}</span></h5>

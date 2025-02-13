@@ -1,0 +1,30 @@
+.footer {
+    position: relative; /* Ensures it stays after the content */
+    width: 100%;
+    background: #212529;
+    color: white;
+    padding: 20px 0;
+    margin-top: auto; /* Push footer down */
+  }
+  .footer-link:hover {
+    text-decoration: underline;
+    color: #17a2b8 !important; /* Bootstrap Primary Color */
+  }
+  
+  .social-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.2);
+    color: #17a2b8 !important;
+  }
+  .social-icon {
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.2);
+  }
+  

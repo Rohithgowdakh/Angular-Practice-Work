@@ -1,5 +1,5 @@
 <div class="container mt-4">
-    <h1 class="d-flex justify-content-center">Investment Calculator</h1>
+    <h1 class="d-flex justify-content-center">{{selectedMode.toUpperCase()}} Calculator</h1>
     <div class="row">
         <div class="col-md-6">
             <!-- SIP / Lumpsum Switch -->
@@ -48,7 +48,7 @@
             </div>
 
             <!-- Time Period -->
-            <label class="form-label mt-3">Time Period</label>
+            <label class="form-label mt-3">Time Period(Years)</label>
             <div class="d-flex align-items-center">
                 <input type="range" class="flex-grow-1" [(ngModel)]="timePeriod" min="1" max="30" step="1">
                 <input type="text" class="form-control ms-2 text-success" [value]="timePeriod + ' Yr'" readonly>

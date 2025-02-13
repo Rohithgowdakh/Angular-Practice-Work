@@ -1,24 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-    <div class="container-fluid d-flex ">
-        <a class="navbar-brand" href="#">
-            <img src="./investment-calculator-logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-            Investment Calculator
-          </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+  <div class="container-fluid">
+      <!-- Brand Name & Logo -->
+      <a class="navbar-brand fw-bold text-light" href="#">
+          <img src="./investment-calculator-logo.png" alt="WealthTrack Logo" width="35" height="30" class="d-inline-block align-text-top me-2">
+          WealthTrack
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse " id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-          <li class="nav-item ">
-            <a class="nav-link" routerLink="/sip-calculator"  routerLinkActive="active"  href="#">SIP Calculator</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/fd-calculator"  routerLinkActive="active"  href="#">FD Calculator</a>
-          </li>
-        </ul>
-        <form class="d-flex ms-2">
-          <a class="btn btn-outline-success" type="submit" href="https://groww.in/login">Login/Register</a>
-        </form>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link text-light px-3" routerLink="/sip-calculator" routerLinkActive="active">SIP Calculator</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-light px-3" routerLink="/fd-calculator" routerLinkActive="active">FD Calculator</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-light px-3" routerLink="/indian-indices" routerLinkActive="active">Indian Indices</a>
+              </li>
+          </ul>
+
+          <!-- Login Button -->
+          <div class="ms-3">
+              <a class="btn btn-primary px-4 fw-semibold shadow-sm" href="https://groww.in/login">Login/Register</a>
+          </div>
       </div>
-    </div>
-  </nav>
+  </div>
+</nav>
