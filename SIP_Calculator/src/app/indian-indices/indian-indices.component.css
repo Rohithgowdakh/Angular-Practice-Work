@@ -11,18 +11,14 @@
   
   /* Ensure main content does not overlap sidebar */
   .main-content {
-    margin-left: 260px; /* Leaves space for sidebar */
-    min-height: 100vh; /* Ensures content stretches */
-    padding-bottom: 100px; /* Prevents footer overlap */
+    margin-left: 260px; 
+    min-height: 100vh;
+    padding-bottom: 100px; 
   }
-  
-  /* Table Scrolls Within Viewport */
   .table-container {
-    max-height: calc(100vh - 120px); /* Adjust height so it doesn't cover anything */
-    overflow-y: auto; /* Makes table scrollable */
+    max-height: calc(100vh - 120px); 
+    overflow-y: auto; 
   }
-  
-  /* Bootstrap Table Adjustments */
   .table {
     width: 100%;
     border-collapse: collapse;
@@ -44,4 +40,8 @@
   }
   ul{
     cursor: pointer;
+  }
+  .list-group-item:hover {
+      background-color: rgba(0, 123, 255, 0.1);
+      color:black;
   }
