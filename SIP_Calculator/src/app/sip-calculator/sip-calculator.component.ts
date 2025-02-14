@@ -17,7 +17,7 @@ export class SipCalculatorComponent {
   expectedRate: number = 12;
   timePeriod: number = 10;
 
-  // Lumpsum Calculation Variables
+  // Lumpsum Calculation 
   totalInvestment: number = 100000;
   // SIP Investment Calculation
   get investedAmount(): number {

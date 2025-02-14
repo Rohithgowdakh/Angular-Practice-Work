@@ -1,0 +1,47 @@
+<div class="container mt-4">
+    <!-- Category Navigation -->
+    <ul class="nav nav-pills justify-content-center mb-3 bg-light shadow-sm rounded p-2">
+      <li class="nav-item" *ngFor="let category of categories" style="cursor: pointer;">
+        <a class="nav-link px-4 py-2 fw-semibold" 
+           [class.active]="category === selectedCategory" 
+           (click)="changeCategory(category)">
+          {{ category }}
+        </a>
+      </li>
+    </ul>
+  
+    <!-- Funds Table -->
+    <div class="table-responsive shadow-lg rounded">
+      <table class="table table-hover table-bordered text-center align-middle">
+        <thead class="table-dark text-white sticky-top">
+          <tr>
+            <th class="py-3">Fund Name</th>
+            <th class="py-3">Crisil Rank</th>
+            <th class="py-3">AUM (Cr)</th>
+            <th class="py-3">1M</th>
+            <th class="py-3">6M</th>
+            <th class="py-3">1Y</th>
+            <th class="py-3">3Y</th>
+            <th class="py-3">5Y</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white">
+          <tr *ngFor="let fund of getFilteredFunds()" class="table-row">
+            <td class="text-primary fw-bold text-start px-3">{{ fund.name }}</td>
+            <td>
+              <span class="badge bg-info bg-gradient text-dark p-2">{{ fund.crisilRank }} ⭐</span>
+            </td>
+            <td class="fw-semibold">{{ fund.aum | number:'1.0-2' }}</td>
+            <td [ngClass]="{ 'text-success': fund.oneMonth > 0, 'text-danger': fund.oneMonth < 0 }">
+              {{ fund.oneMonth | percent }}
+            </td>
+            <td class="text-success fw-semibold">{{ fund.sixMonths | percent }}</td>
+            <td class="text-success fw-semibold">{{ fund.oneYear | percent }}</td>
+            <td class="text-success fw-semibold">{{ fund.threeYears | percent }}</td>
+            <td class="text-success fw-semibold">{{ fund.fiveYears | percent }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

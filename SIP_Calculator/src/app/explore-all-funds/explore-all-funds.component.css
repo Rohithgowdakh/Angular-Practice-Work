@@ -1,0 +1,32 @@
+Smooth hover effect on rows
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+thead.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.table th, .table td {
+  font-size: 1rem;
+  padding: 12px;
+}
+.shadow-lg {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-pills .nav-link {
+  transition: 0.3s ease-in-out;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #007bff;
+  color: white;
+}
+.nav-item:hover{
+    background-color:rgba(0, 123, 255, 0.1) ;
+}
