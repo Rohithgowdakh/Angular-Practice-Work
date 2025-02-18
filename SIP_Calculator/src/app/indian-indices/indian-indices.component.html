@@ -1,24 +1,24 @@
 <div class="container-fluid">
   <div class="row">
-    <!-- Fixed Sidebar -->
-    <div class="col-md-3 fixed-sidebar">
-      <h3>Key Indices</h3>
-      <ul class="list-group cursor-pointer">
+    <!-- Sidebar -->
+    <div class="col-lg-3 col-md-4 fixed-sidebar">
+      <h3 class="text-center">Key Indices</h3>
+      <ul class="list-group text-center">
         <li *ngFor="let index of allIndices" 
             (click)="onSelectIndex(index.name)" 
-            class="list-group-item" 
+            class="list-group-item"
             [class.active]="selectedIndex === index.name">
           {{ index.name }}
         </li>
       </ul>
     </div>
 
-    <!-- Main Content (Table Section) -->
-    <div class="col-md-9 main-content">
-      <h3 *ngIf="selectedIndex">{{ selectedIndex }}</h3>
+    <!-- Main Content -->
+    <div class="col-lg-9 col-md-8 col-12 main-content">
+      <h3 class="text-center">{{ selectedIndex }}</h3>
 
-      <div class="table-container">
-        <table class="table table-striped table-bordered">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered text-center">
           <thead class="thead-dark">
             <tr>
               <th>Name</th>
@@ -34,18 +34,18 @@
           </thead>
           <tbody>
             <tr *ngFor="let stock of selectedIndexData">
-                <td>{{ stock.name }}</td>
-                <td>{{ stock.ltp | number:'1.2-2' }}</td>
-                <td [ngClass]="{'text-green': stock.percentageChange > 0, 'text-red': stock.percentageChange < 0}">
-                  {{ stock.percentageChange | number:'1.2-2' }}%
-                </td>
-                <td>{{ stock.change | number:'1.2-2' }}</td>
-                <td>{{ stock.volume | number:'1.0-0' }}</td>
-                <td>{{ stock.buyPrice | number:'1.2-2' }}</td>
-                <td>{{ stock.sellPrice | number:'1.2-2' }}</td>
-                <td>{{ stock.buyQty | number }}</td>
-                <td>{{ stock.sellQty | number }}</td>
-              </tr>
+              <td>{{ stock.name }}</td>
+              <td>{{ stock.ltp | number:'1.2-2' }}</td>
+              <td [ngClass]="{'text-success': stock.percentageChange > 0, 'text-danger': stock.percentageChange < 0}">
+                {{ stock.percentageChange | number:'1.2-2' }}%
+              </td>
+              <td>{{ stock.change | number:'1.2-2' }}</td>
+              <td>{{ stock.volume | number:'1.0-0' }}</td>
+              <td>{{ stock.buyPrice | number:'1.2-2' }}</td>
+              <td>{{ stock.sellPrice | number:'1.2-2' }}</td>
+              <td>{{ stock.buyQty | number }}</td>
+              <td>{{ stock.sellQty | number }}</td>
+            </tr>
           </tbody>
         </table>
       </div>

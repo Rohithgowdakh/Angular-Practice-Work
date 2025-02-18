@@ -1,15 +1,28 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+export interface FundData {
+  category: string;
+  name: string;
+  crisilRank: number;
+  aum: number; 
+  oneMonth: number;
+  sixMonths: number;
+  oneYear: number;
+  threeYears: number;
+  fiveYears: number;
+}
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
-  private apiURL="https://dummyjson.com/products/category/smartphones";
-  constructor(private http:HttpClient) { }
+export class StockService {
+  private apiUrl = 'http://localhost:5067/api/sample'; 
 
-  getCompanies():Observable<any>{
-    return this.http.get<any>(this.apiURL);
+  constructor(private http: HttpClient) {}
+
+  getFunds(): Observable<FundData[]> {
+    return this.http.get<FundData[]>(this.apiUrl)
   }
 }

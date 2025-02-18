@@ -6,10 +6,10 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, RouterOutlet, FooterComponent,CommonModule],
+  imports: [HeaderComponent, RouterOutlet, FooterComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'WealthTrack';
+  title = 'Wealth Track';
 }
