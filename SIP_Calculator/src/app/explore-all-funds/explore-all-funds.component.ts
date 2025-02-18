@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { FundData, StockService } from '../services/api.service';
 interface Fund {
   category: string;
   name: string;
@@ -20,20 +21,19 @@ interface Fund {
   styleUrls: ['./explore-all-funds.component.css']
 })
 export class ExploreAllFundsComponent implements OnInit {
-  funds: Fund[] = [];
+  
   categories: string[] = ["Equity", "Debt Long Term", "Debt Short Term", "Hybrid", "Tax-saving"];
   selectedCategory: string = "Debt Long Term";
+funds: FundData[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private stockService: StockService) {}
 
-  ngOnInit() {
-    this.loadFunds();
-  }
-
-  loadFunds() {
-    this.http.get<Fund[]>('funds-data.json').subscribe(data => {
-      this.funds = data;
-    });
+  ngOnInit(): void {
+    this.stockService.getFunds().subscribe(
+      (data: FundData[]) => {
+        this.funds = data;  
+      }
+    );
   }
 
   changeCategory(category: string) {

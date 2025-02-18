@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgClass, NgIf, NgFor } from '@angular/common';
-import { IndexData, Stock } from './stock.model';
+import { IndexData } from './stock.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-indian-indices',
   standalone: true,
-  imports: [NgClass, NgIf, NgFor,CommonModule],
+  imports: [NgClass, NgFor, CommonModule],
   templateUrl: './indian-indices.component.html',
   styleUrls: ['./indian-indices.component.css']
 })
 export class IndianIndicesComponent implements OnInit {
-  allIndices: IndexData[] = [];  // Full index data
-  selectedIndexData: any[] = []; // Stocks of selected index
-  selectedIndex: string = ''; // Selected index name
+  allIndices: IndexData[] = [];  // List of all indices
+  selectedIndexData: any[] = []; // Stocks of the selected index
+  selectedIndex: string = "NIFTY 50"; // ✅ Default selection
 
   constructor(private http: HttpClient) {}
 
@@ -22,9 +22,10 @@ export class IndianIndicesComponent implements OnInit {
     // Fetch initial data from JSON
     this.http.get<IndexData[]>('data.json').subscribe((response) => {
       this.allIndices = response;
+      this.onSelectIndex("NIFTY 50");
     });
 
-    // Update stock data randomly every 5 seconds
+    // Update stock data randomly every 2 seconds
     setInterval(() => {
       this.updateRandomStockData();
     }, 2000);
@@ -35,6 +36,7 @@ export class IndianIndicesComponent implements OnInit {
     const selected = this.allIndices.find(index => index.name === indexName);
     this.selectedIndexData = selected ? selected.stocks : [];
   }
+
   updateRandomStockData() {
     this.selectedIndexData = this.selectedIndexData.map(stock => ({
       ...stock,

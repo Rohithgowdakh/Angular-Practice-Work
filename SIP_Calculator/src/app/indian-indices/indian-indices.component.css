@@ -1,47 +1,56 @@
 .fixed-sidebar {
-    position: absolute; /* Use absolute so it extends fully */
-    top: 56px; /* Adjust based on header height */
-    left: 0;
-    width: 250px; /* Sidebar width */
-    bottom: 0; /* Extends to bottom */
-    overflow-y: auto; /* Enables scrolling */
-    background: #f8f9fa; /* Light background */
-    border-right: 1px solid #ddd;
-  }
-  
-  /* Ensure main content does not overlap sidebar */
-  .main-content {
-    margin-left: 260px; 
-    min-height: 100vh;
-    padding-bottom: 100px; 
-  }
-  .table-container {
-    max-height: calc(100vh - 120px); 
-    overflow-y: auto; 
-  }
-  .table {
+  position: sticky;
+  top: 56px;
+  height: 80vh;
+  overflow-y: auto;
+  background: #f8f9fa;
+  padding: 15px;
+}
+
+.main-content {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.table-responsive {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+.list-group-item:hover{
+  background-color: #bbd4ec;
+}
+.list-group-item.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 991px) {
+  .fixed-sidebar {
     width: 100%;
-    border-collapse: collapse;
+    height: auto;
+    position: relative;
   }
-  
-  .table thead {
-    position: sticky;
-    top: 0;
-    background: #fff; /* Keeps header visible when scrolling */
-    z-index: 2;
+
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
   }
-  
-.text-green {
-    color: green;
+
+  .list-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row !important;
   }
-  
-  .text-red {
-    color: red;
+
+  .list-group-item {
+    flex: 1 1 auto;
+    text-align: center;
+    max-width: 120px;
   }
-  ul{
-    cursor: pointer;
-  }
-  .list-group-item:hover {
-      background-color: rgba(0, 123, 255, 0.1);
-      color:black;
-  }
+}
