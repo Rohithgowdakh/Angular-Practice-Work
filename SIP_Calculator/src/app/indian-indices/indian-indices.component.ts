@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class IndianIndicesComponent implements OnInit {
   allIndices: IndexData[] = [];  // List of all indices
   selectedIndexData: any[] = []; // Stocks of the selected index
-  selectedIndex: string = "NIFTY 50"; // ✅ Default selection
+  selectedIndex: string = "NIFTY 50"; 
 
   constructor(private http: HttpClient) {}
 

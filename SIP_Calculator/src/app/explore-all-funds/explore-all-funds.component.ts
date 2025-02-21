@@ -24,13 +24,13 @@ export class ExploreAllFundsComponent implements OnInit {
   
   categories: string[] = ["Equity", "Debt Long Term", "Debt Short Term", "Hybrid", "Tax-saving"];
   selectedCategory: string = "Debt Long Term";
-funds: FundData[] = [];
+  funds: FundData[] = [];
 
   constructor(private stockService: StockService) {}
 
   ngOnInit(): void {
     this.stockService.getFunds().subscribe(
-      (data: FundData[]) => {
+      (data) => {
         this.funds = data;  
       }
     );
